@@ -1,0 +1,98 @@
+@import "tailwindcss";
+
+@theme {
+    --background: #fcfcfc;
+
+    --color-primary: #6D28D9;
+    --color-primary-light: #8B5CF6;
+
+    --color-text-primary: rgba(20, 20, 20, 1);
+    --color-text-secondary: rgba(48, 48, 48, 1);
+    --color-text-disabled: rgba(160, 160, 160, 1);
+
+    --color-border: #ECECEC;
+    --color-border-hover: #D4D4D4;
+    --color-surface: #FFFFFF;
+
+    --gradient-primary: linear-gradient(
+            90deg,
+            #6D28D9 0%,
+            #8B5CF6 100%
+    );
+
+    --radius-primary: 16px;
+    --radius-button: 8px;
+
+    --container-width: 1440px;
+
+    --navbar-height: 72px;
+    --navbar-background: #FFFFFF;
+
+    --logo-background: rgba(236, 236, 236, 1);
+}
+
+@layer base {
+    *,
+    *::before,
+    *::after {
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+    }
+
+    html {
+        font-family: var(--font-iransans);
+        scroll-behavior: smooth;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+
+    body {
+        background: var(--background);
+        color: var(--color-primary);
+        min-height: 100vh;
+        text-rendering: optimizeLegibility;
+        overflow-x: hidden;
+    }
+
+    img {
+        display: block;
+        max-width: 100%;
+    }
+
+    button {
+        cursor: pointer;
+        border: none;
+        background: transparent;
+        font: inherit;
+    }
+
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
+
+    ul,
+    ol {
+        list-style: none;
+    }
+}
+
+@utility page-container {
+    margin-inline: auto;
+    width: 100%;
+    max-width: var(--container-width);
+    padding-inline: 1rem;
+}
+
+@media (min-width: 640px) {
+    .page-container {
+        padding-inline: 1.5rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .page-container {
+        padding-inline: 2rem;
+    }
+}
