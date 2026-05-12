@@ -1,4 +1,4 @@
-export const navItems = [
+export const navConstants = [
   {
     label: "خانه",
     href: "/home",

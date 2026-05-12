@@ -1,4 +1,4 @@
-import Navbar from "@/app/components/layout/nav-bar/nav-bar";
+import Navbar from "@/app/components/nav-bar/nav-bar";
 import HeroSection from "@/app/components/sections/hero/hero";
 import CarouselSection from "@/app/components/sections/carousel/carousel";
 import ConsultationForm from "@/app/components/sections/consultation/consultation";

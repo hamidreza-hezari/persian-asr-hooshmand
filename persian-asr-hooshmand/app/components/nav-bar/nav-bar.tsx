@@ -9,7 +9,7 @@ import IconButton from "@/app/components/ui/icon-button";
 
 export default function Navbar() {
   return (
-    <header className="sticky top-2 z-99 bg-(--navbar-background) md:top-0">
+    <header className="top-2 z-99 bg-(--navbar-background) md:top-0">
       <div className="page-container">
         <div className="xs:h-(--navbar-height-mobile) flex items-center justify-between gap-4 md:h-(--navbar-height-desktop)">
           <div className="flex items-center gap-3">
