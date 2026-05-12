@@ -3,7 +3,7 @@
 import React from "react";
 import { useRouter } from "next/navigation";
 
-export default function NotFound() {
+export default function Page() {
   const router = useRouter();
 
   const handleNavigate = () => {
@@ -11,7 +11,7 @@ export default function NotFound() {
   };
 
   return (
-    <main className="grid min-h-screen place-items-center bg-white px-6 py-24 md:px-8 md:py-32">
+    <main className="grid min-h-screen place-items-center overflow-hidden bg-white px-6 py-24 md:px-8 md:py-32">
       <div className="text-center">
         <h1 className="text-text-primary mt-4 text-lg font-bold tracking-tight md:text-2xl">
           تسک انجام شده توسط حمیدرضا هزاری

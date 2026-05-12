@@ -1,17 +1,17 @@
 "use client";
 
-import {
-  type ChangeEvent,
-  type SubmitEvent,
-  useCallback,
-  useReducer,
-  useState,
-} from "react";
-import {
-  FormErrors,
-  FormState,
-  ServiceOption,
-} from "@/app/components/sections/consultation/consultation-form.types";
+import { type ChangeEvent, type SubmitEvent, useCallback, useReducer, useState } from "react";
+import { ServiceOption } from "@/app/constants/form.constants";
+
+export type FormState = {
+  fullName: string;
+  phone: string;
+  email: string;
+  description: string;
+  services: ServiceOption[];
+};
+
+export type FormErrors = Partial<Record<keyof FormState, string>>;
 
 const initialState: FormState = {
   fullName: "",

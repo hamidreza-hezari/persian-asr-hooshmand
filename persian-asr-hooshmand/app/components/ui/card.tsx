@@ -6,7 +6,7 @@ type CardRootProps = {
   className?: string;
 };
 
-function Root({ children, className = "" }: CardRootProps) {
+function CardRoot({ children, className = "" }: CardRootProps) {
   return <article className={`feature-card ${className}`}>{children}</article>;
 }
 
@@ -15,7 +15,7 @@ type CardIconProps = {
   className?: string;
 };
 
-function Icon({ icon: IconComponent, className = "" }: CardIconProps) {
+function CardIcon({ icon: IconComponent, className = "" }: CardIconProps) {
   return (
     <div className="flex items-center justify-center">
       <IconComponent
@@ -31,7 +31,7 @@ type CardTitleProps = {
   className?: string;
 };
 
-function Title({ children, className = "" }: CardTitleProps) {
+function CardTitle({ children, className = "" }: CardTitleProps) {
   return (
     <h4
       className={`text-text-primary text-center text-lg font-semibold tracking-tight ${className}`}
@@ -46,7 +46,7 @@ type CardDescriptionProps = {
   className?: string;
 };
 
-function Description({ children, className = "" }: CardDescriptionProps) {
+function CardDescription({ children, className = "" }: CardDescriptionProps) {
   return (
     <p
       className={`text-text-primary max-w-prose flex-1 text-center text-sm leading-6 ${className}`}
@@ -57,8 +57,8 @@ function Description({ children, className = "" }: CardDescriptionProps) {
 }
 
 export const Card = {
-  Root,
-  Icon,
-  Title,
-  Description,
+  Root: CardRoot,
+  Icon: CardIcon,
+  Title: CardTitle,
+  Description: CardDescription,
 };
