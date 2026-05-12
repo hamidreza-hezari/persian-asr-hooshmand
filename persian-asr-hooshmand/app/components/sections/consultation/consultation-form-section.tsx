@@ -2,14 +2,20 @@
 
 import { useMemo } from "react";
 import { MailIcon, TelIcon, UserIcon } from "@/assets/icons";
-import { useConsultationForm } from "@/app/components/sections/consultation/consultation-form.hooks";
 import { InputField } from "@/app/components/ui/form/input-field";
 import { ServiceItem } from "@/app/components/ui/form/service-item";
 import { SERVICE_OPTIONS } from "@/app/constants/form.constants";
+import { useConsultationForm } from "@/app/components/sections/consultation/use-consultation-form";
 
 export default function ConsultationForm() {
-  const { form, errors, isSubmitting, setField, toggleService, submit } =
-    useConsultationForm();
+  const {
+    form,
+    errors,
+    isSubmitting,
+    toggleService,
+    submit,
+    handleFieldChange,
+  } = useConsultationForm();
 
   const selectedServices = useMemo(
     () => new Set(form.services),
@@ -36,18 +42,20 @@ export default function ConsultationForm() {
             <div className="grid grid-cols-1 gap-3 md:grid-cols-3">
               <InputField
                 label="نام و نام خانوادگی"
+                aria-label="نام و نام خانوادگی"
                 placeholder="نام و نام خانوادگی خود را وارد کنید"
                 value={form.fullName}
-                onChange={setField("fullName")}
+                onChange={handleFieldChange("fullName")}
                 error={errors.fullName}
                 Icon={UserIcon}
               />
 
               <InputField
                 label="آدرس ایمیل خود را وارد کنید"
+                aria-label="آدرس ایمیل خود را وارد کنید"
                 placeholder="مثلا email@mail.com"
                 value={form.email}
-                onChange={setField("email")}
+                onChange={handleFieldChange("email")}
                 error={errors.email}
                 type="email"
                 Icon={MailIcon}
@@ -55,9 +63,10 @@ export default function ConsultationForm() {
 
               <InputField
                 label="شماره تماس خود را وارد کنید"
+                aria-label="شماره تماس خود را وارد کنید"
                 placeholder="مثلا ۰۹۱۲۳۴۵۶۷۸۹"
                 value={form.phone}
-                onChange={setField("phone")}
+                onChange={handleFieldChange("phone")}
                 error={errors.phone}
                 Icon={TelIcon}
               />
@@ -73,6 +82,7 @@ export default function ConsultationForm() {
                   <ServiceItem
                     key={service}
                     label={service}
+                    aria-label={service}
                     checked={selectedServices.has(service)}
                     onToggle={toggleService}
                   />
@@ -87,9 +97,10 @@ export default function ConsultationForm() {
 
               <textarea
                 rows={4}
+                aria-label={"توضیحات درخواست مشاوره"}
                 value={form.description}
-                onChange={setField("description")}
-                placeholder="توضیحات اختیاری"
+                onChange={handleFieldChange("description")}
+                placeholder="توضیحات (اختیاری)"
                 className={`placeholder:text-text-disabled w-full resize-none rounded-2xl border bg-[#f9f9f9] p-4 text-sm transition-all outline-none focus:border-black ${
                   errors.description ? "border-red-500" : "border-border"
                 }`}
