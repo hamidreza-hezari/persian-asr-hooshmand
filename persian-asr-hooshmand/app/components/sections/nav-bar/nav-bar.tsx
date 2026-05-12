@@ -1,11 +1,8 @@
-import Link from "next/link";
-
 import DesktopNav from "./desktop-nav";
 import MobileNav from "./mobile-nav";
 
-import ProfileIcon from "@/assets/icons/profile-icon";
-import SearchIcon from "@/assets/icons/search-icon";
-import IconButton from "@/app/components/ui/icon-button";
+import { ProfileIcon, SearchIcon } from "@/assets/icons";
+import IconButton from "@/app/components/ui/icon-button/icon-button";
 
 export default function Navbar() {
   return (
@@ -15,12 +12,9 @@ export default function Navbar() {
           <div className="flex items-center gap-3">
             <MobileNav />
 
-            <Link
-              href="/"
-              className="text-text-primary inline-flex h-8 w-18 items-center justify-center rounded-4xl bg-(--logo-background) px-6 text-xs font-medium transition-all duration-200 md:h-10 md:w-25 md:text-lg"
-            >
+            <p className="text-text-primary inline-flex h-8 w-18 items-center justify-center rounded-4xl bg-(--logo-background) px-6 text-xs font-medium transition-all duration-200 md:h-10 md:w-25 md:text-lg">
               logo
-            </Link>
+            </p>
           </div>
           <DesktopNav activePath="/campaigns" />
           <div className="flex items-center gap-3 md:gap-4">

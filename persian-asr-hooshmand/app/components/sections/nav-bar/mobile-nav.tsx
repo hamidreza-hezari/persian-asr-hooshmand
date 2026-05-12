@@ -1,5 +1,5 @@
-import MenuIcon from "@/assets/icons/menu-icon";
-import IconButton from "@/app/components/ui/icon-button";
+import { MenuIcon } from "@/assets/icons";
+import IconButton from "@/app/components/ui/icon-button/icon-button";
 
 export default function MobileNav() {
   return (

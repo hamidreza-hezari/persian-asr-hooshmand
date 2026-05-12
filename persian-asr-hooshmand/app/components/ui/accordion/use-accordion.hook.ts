@@ -2,8 +2,18 @@
 
 import { useCallback, useState } from "react";
 
-export const useFAQAccordion = (allowMultiple = false) => {
-  const [openItems, setOpenItems] = useState<Set<string>>(new Set());
+type Options = {
+  multiple?: boolean;
+  defaultOpenItems?: string[];
+};
+
+export function useAccordion({
+  multiple = false,
+  defaultOpenItems = [],
+}: Options = {}) {
+  const [openItems, setOpenItems] = useState(new Set(defaultOpenItems));
+
+  const isOpen = useCallback((id: string) => openItems.has(id), [openItems]);
 
   const toggleItem = useCallback(
     (id: string) => {
@@ -13,23 +23,22 @@ export const useFAQAccordion = (allowMultiple = false) => {
         if (next.has(id)) {
           next.delete(id);
         } else {
-          if (!allowMultiple) {
+          if (!multiple) {
             next.clear();
           }
+
           next.add(id);
         }
 
         return next;
       });
     },
-    [allowMultiple],
+    [multiple],
   );
-
-  const isOpen = useCallback((id: string) => openItems.has(id), [openItems]);
 
   return {
     openItems,
-    toggleItem,
     isOpen,
+    toggleItem,
   };
-};
+}

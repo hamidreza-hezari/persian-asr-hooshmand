@@ -1,15 +1,12 @@
 "use client";
 
 import React from "react";
-import { useFAQAccordion } from "@/app/components/sections/faqs/use-faq-accordion.hook";
-import {
-  FAQAccordion,
-  FAQAccordionProvider,
-} from "@/app/components/sections/faqs/faq-accordion";
-import { FAQS_DATA } from "@/app/constants/faqs.constants";
+import { FAQItem, FAQS_DATA } from "@/app/constants/faqs.constants";
+import { useAccordion } from "@/app/components/ui/accordion/use-accordion.hook";
+import { Accordion } from "../../ui/accordion/accordion";
 
 export default function FAQSection() {
-  const accordionState = useFAQAccordion(false);
+  const accordion = useAccordion();
 
   return (
     <section className="w-full overflow-hidden py-8 md:py-16">
@@ -29,14 +26,19 @@ export default function FAQSection() {
           </div>
 
           <div className="md:w-2/3">
-            <FAQAccordionProvider value={accordionState}>
-              {FAQS_DATA.map((item) => (
-                <FAQAccordion.Item key={item.id} item={item}>
-                  <FAQAccordion.Trigger id={item.id} question={item.question} />
-                  <FAQAccordion.Content id={item.id} answer={item.answer} />
-                </FAQAccordion.Item>
+            <Accordion.Root value={accordion}>
+              {FAQS_DATA.map((faq: FAQItem) => (
+                <Accordion.Item key={faq.id} id={faq.id}>
+                  <Accordion.Trigger id={faq.id}>
+                    <h3>{faq.question}</h3>
+                  </Accordion.Trigger>
+
+                  <Accordion.Content id={faq.id}>
+                    <p>{faq.answer}</p>
+                  </Accordion.Content>
+                </Accordion.Item>
               ))}
-            </FAQAccordionProvider>
+            </Accordion.Root>
           </div>
         </div>
       </div>

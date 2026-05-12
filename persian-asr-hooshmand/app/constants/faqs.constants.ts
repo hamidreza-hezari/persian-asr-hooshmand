@@ -4,7 +4,7 @@ export type FAQItem = {
   answer: string;
 };
 
-export const FAQS_DATA = [
+export const FAQS_DATA: FAQItem[] = [
   {
     id: "Q1",
     question: "مراحل طراحی وب سایت چیست؟",

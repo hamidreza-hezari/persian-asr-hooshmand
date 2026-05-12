@@ -6,7 +6,7 @@ import { A11y, Autoplay, Keyboard, Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/bundle";
 
-import { Card } from "../../ui/card";
+import { Card } from "../../ui/card/card";
 import { CAROUSEL_DATA } from "@/app/constants/carousel.constants";
 import { CarouselNavigationButton } from "@/app/components/sections/carousel/carousel-navigation-button";
 
@@ -24,12 +24,15 @@ export default function CarouselSection() {
               <Swiper
                 modules={[Autoplay, Navigation, A11y, Keyboard]}
                 loop
-                keyboard={true}
                 grabCursor
                 speed={800}
                 spaceBetween={12}
                 slidesPerView={1.15}
                 centeredSlides={false}
+                keyboard={{
+                  enabled: true,
+                  onlyInViewport: true,
+                }}
                 autoplay={{
                   delay: 3000,
                   disableOnInteraction: false,
@@ -52,7 +55,6 @@ export default function CarouselSection() {
                 }}
                 a11y={{
                   enabled: true,
-                  onlyInViewport: true,
                 }}
                 className="overflow-hidden!"
               >

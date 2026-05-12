@@ -1,5 +1,5 @@
 import { memo } from "react";
-import { ServiceOption } from "@/app/components/sections/consultation/consultation-form.types";
+import { ServiceOption } from "@/app/constants/form.constants";
 
 export type ServiceProps = {
   label: ServiceOption;

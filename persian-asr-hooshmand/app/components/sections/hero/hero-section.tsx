@@ -1,4 +1,4 @@
-import HeroImage from "@/assets/icons/hero-image";
+import { HeroImage } from "@/assets/icons";
 
 export default function HeroSection() {
   return (

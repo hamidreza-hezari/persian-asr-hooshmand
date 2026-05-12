@@ -1,11 +1,13 @@
-import AdvertisingIcon from "@/assets/icons/advertising-icon";
-import FearIcon from "@/assets/icons/fear-icon";
-import ImaginingIcon from "@/assets/icons/imagining-icon";
-import IgnoranceIcon from "@/assets/icons/ignorance-icon";
-import LackIcon from "@/assets/icons/lack-icon";
-import ExpensesIcon from "@/assets/icons/expenses-icon";
-import WasteIcon from "@/assets/icons/waste-icon";
-import GrowthIcon from "@/assets/icons/growth-icon";
+import {
+  AdvertisingIcon,
+  ExpensesIcon,
+  FearIcon,
+  GrowthIcon,
+  IgnoranceIcon,
+  ImaginingIcon,
+  LackIcon,
+  WasteIcon,
+} from "@/assets/icons";
 
 export const CAROUSEL_DATA = [
   {

@@ -1,12 +1,10 @@
 "use client";
 
 import { useMemo } from "react";
-import UserIcon from "@/assets/icons/user-icon";
-import MailIcon from "@/assets/icons/mail-icon";
-import TelIcon from "@/assets/icons/tel-icon";
+import { MailIcon, TelIcon, UserIcon } from "@/assets/icons";
 import { useConsultationForm } from "@/app/components/sections/consultation/consultation-form.hooks";
-import { InputField } from "@/app/components/ui/input-field";
-import { ServiceItem } from "@/app/components/ui/service-item";
+import { InputField } from "@/app/components/ui/form/input-field";
+import { ServiceItem } from "@/app/components/ui/form/service-item";
 import { SERVICE_OPTIONS } from "@/app/constants/form.constants";
 
 export default function ConsultationForm() {
