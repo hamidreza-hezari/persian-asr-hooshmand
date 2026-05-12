@@ -14,11 +14,3 @@ export type FormState = {
 };
 
 export type FormErrors = Partial<Record<keyof FormState, string>>;
-
-export const SERVICE_OPTIONS: ServiceOption[] = [
-  "خدمات سئو",
-  "طراحی وب سایت",
-  "اتوماسیون و بازاریابی",
-  "کمپین‌های بازاریابی و تبلیغاتی",
-  "خدمات تولید محتوا",
-];

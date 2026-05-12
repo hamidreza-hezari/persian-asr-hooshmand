@@ -7,7 +7,7 @@ import "swiper/css";
 import "swiper/css/bundle";
 
 import { Card } from "../../ui/card";
-import { CAROUSEL_DATA } from "@/app/components/sections/carousel/carousel.data";
+import { CAROUSEL_DATA } from "@/app/constants/carousel.constants";
 import { CarouselNavigationButton } from "@/app/components/sections/carousel/carousel-navigation-button";
 
 export default function CarouselSection() {

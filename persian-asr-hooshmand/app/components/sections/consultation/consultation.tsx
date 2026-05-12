@@ -7,7 +7,7 @@ import TelIcon from "@/assets/icons/tel-icon";
 import { useConsultationForm } from "@/app/components/sections/consultation/consultation-form.hooks";
 import { InputField } from "@/app/components/ui/input-field";
 import { ServiceItem } from "@/app/components/ui/service-item";
-import { SERVICE_OPTIONS } from "@/app/components/sections/consultation/consultation-form.types";
+import { SERVICE_OPTIONS } from "@/app/constants/form.constants";
 
 export default function ConsultationForm() {
   const { form, errors, isSubmitting, setField, toggleService, submit } =
@@ -19,7 +19,7 @@ export default function ConsultationForm() {
   );
 
   return (
-    <section dir="rtl" className="px-4 py-16">
+    <section dir="rtl" className="overflow-hidden px-4 py-16">
       <div className="max-w-width mx-auto">
         <div className="mb-6 text-center">
           <h2 className="text-text-secondary text-xl font-black">
@@ -108,7 +108,7 @@ export default function ConsultationForm() {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="bg-text-secondary h-12 min-w-sm items-center justify-center rounded-3xl px-8 text-sm font-bold text-white transition-all hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-60"
+                className="bg-text-secondary h-12 w-sm items-center justify-center rounded-3xl px-8 text-sm font-bold text-white transition-all hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-60"
               >
                 {isSubmitting ? "در حال ارسال..." : "ثبت درخواست"}
               </button>
