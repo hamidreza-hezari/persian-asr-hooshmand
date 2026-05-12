@@ -7,7 +7,9 @@ type DesktopNavProps = {
   activePath: string;
 };
 
-export default function DesktopNav({ activePath }: DesktopNavProps) {
+export default function DesktopNav({
+  activePath = "/campaigns",
+}: DesktopNavProps) {
   return (
     <nav aria-label="Desktop navigation" className="hidden lg:block">
       <ul className="flex items-center gap-8 xl:gap-10">

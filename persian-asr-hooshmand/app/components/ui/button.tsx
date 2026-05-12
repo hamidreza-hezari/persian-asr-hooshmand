@@ -9,13 +9,11 @@ type ButtonProps = {
 
 export default function Button({ children, href, className }: ButtonProps) {
   const styles = cn(
-    "inline-flex items-center justify-center rounded-[18px]",
+    "inline-flex items-center justify-center rounded-md",
     "bg-[linear-gradient(90deg,#6D28D9_0%,#8B5CF6_100%)]",
-    "px-6 py-3.5 sm:px-8",
-    "text-sm font-bold text-white sm:text-base",
-    "shadow-[0_10px_30px_rgba(109,40,217,0.22)]",
+    "px-6 py-3.5",
+    "text-sm font-bold text-white md:text-base",
     "transition-all duration-300",
-    "hover:-translate-y-0.5 hover:shadow-[0_14px_40px_rgba(109,40,217,0.28)]",
     "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-violet-500 focus-visible:ring-offset-2",
     className,
   );

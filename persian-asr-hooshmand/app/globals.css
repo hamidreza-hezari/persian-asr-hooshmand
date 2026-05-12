@@ -1,13 +1,14 @@
 @import "tailwindcss";
 
 @theme {
-    --background: #fcfcfc;
+    --background: #f9f9f9;
 
     --color-primary: #6D28D9;
     --color-primary-light: #8B5CF6;
 
     --color-text-primary: rgba(20, 20, 20, 1);
     --color-text-secondary: rgba(48, 48, 48, 1);
+    --color-text-tertiary: rgba(81, 81, 81, 1);
     --color-text-disabled: rgba(160, 160, 160, 1);
 
     --color-border: #ECECEC;
@@ -25,7 +26,8 @@
 
     --container-width: 1440px;
 
-    --navbar-height: 72px;
+    --navbar-height-desktop: 72px;
+    --navbar-height-mobile: 64px;
     --navbar-background: #FFFFFF;
 
     --logo-background: rgba(236, 236, 236, 1);
@@ -95,4 +97,8 @@
     .page-container {
         padding-inline: 2rem;
     }
+}
+
+.feature-card {
+    @apply flex flex-col items-center max-w-xs justify-center gap-3 md:gap-4 rounded-lg border border-border bg-white px-2 py-4 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-sm;
 }

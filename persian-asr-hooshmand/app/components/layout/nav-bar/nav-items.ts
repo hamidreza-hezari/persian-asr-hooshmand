@@ -1,7 +1,7 @@
 export const navItems = [
   {
     label: "خانه",
-    href: "/",
+    href: "/home",
   },
   {
     label: "طراحی سایت",
