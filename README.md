@@ -1,4 +1,4 @@
-# Persian ASR Hooshmand - Frontend Interview Task By Hamidreza Hezari
+# Persian ASR Hooshmand
 
 # to get started just run:
  - npm install
